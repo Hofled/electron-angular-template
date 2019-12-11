@@ -1,7 +1,16 @@
 {
   "name": "electron-angular-template",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": {
+    "name": "Ofri Herold",
+    "email": "ofri.herold@gmail.com",
+    "url": "https://github.com/Hofled"
+  },
   "scripts": {
+    "build-electron": "tsc -p ./electron/tsconfig.electron.json",
+    "dev-build:w": "concurrently \"tsc -w -p ./electron/tsconfig.electron.json\" \"npm:dev-web-build:w\"",
+    "e-start": "cross-env NODE_ENV=development electron ./dist/electron-main.js",
+    "dev-web-build:w": "ng build --watch=true --progress=true --prod=false --deleteOutputPath=false",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -31,10 +40,13 @@
     "@angular/cli": "~8.3.20",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "concurrently": "^5.0.1",
+    "cross-env": "^6.0.3",
+    "electron": "^7.1.4",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",

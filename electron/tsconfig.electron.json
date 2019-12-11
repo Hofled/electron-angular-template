@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "outDir": "../dist",
+        "rootDir": "./",
+        "sourceMap": true,
+        "declaration": false,
+        "strict": true,
+        "strictNullChecks": false,
+        "moduleResolution": "node",
+        "target": "es5",
+        "lib": [
+            "es2018",
+            "DOM"
+        ]
+    },
+    "files": [
+        "./electron-main.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
