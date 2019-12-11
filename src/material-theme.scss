@@ -9,11 +9,25 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+$electron-primary-blue: (
+    500: #2f3241,
+    contrast: (
+        500: #9feaf9
+    )
+);
+
+$electron-accent-blue: (
+    500: #9feaf9,
+    contrast: (
+        500: $dark-primary-text
+    )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$electron-angular-template-primary: mat-palette($mat-indigo);
-$electron-angular-template-accent: mat-palette($mat-pink, A200, A100, A400);
+$electron-angular-template-primary: mat-palette($electron-primary-blue);
+$electron-angular-template-accent: mat-palette($electron-accent-blue);
 
 // The warn palette is optional (defaults to red).
 $electron-angular-template-warn: mat-palette($mat-red);
