@@ -1,16 +1,29 @@
 {
   "name": "electron-angular-template",
+  "description": "A template application used for starting your development on an Electron project with Angular.",
   "version": "0.0.1",
+  "main": "dist/electron-main.js",
   "author": {
     "name": "Ofri Herold",
     "email": "ofri.herold@gmail.com",
     "url": "https://github.com/Hofled"
+  },
+  "build": {
+    "directories": {
+      "output": "electron-builder"
+    },
+    "appId": "electron.angular.template",    
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    }
   },
   "scripts": {
     "build-electron": "tsc -p ./electron/tsconfig.electron.json",
     "dev-build:w": "concurrently \"tsc -w -p ./electron/tsconfig.electron.json\" \"npm:dev-web-build:w\"",
     "e-start": "cross-env NODE_ENV=development electron ./dist/electron-main.js",
     "dev-web-build:w": "ng build --watch=true --progress=true --prod=false --deleteOutputPath=false",
+    "pkg-build": "electron-builder --dir",
+    "dist": "electron-builder",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -47,6 +60,7 @@
     "concurrently": "^5.0.1",
     "cross-env": "^6.0.3",
     "electron": "^7.1.4",
+    "electron-builder": "^21.2.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",

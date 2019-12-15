@@ -4,7 +4,7 @@ import * as url from "url";
 
 let mainWindow: BrowserWindow;
 
-const IndexUrl =
+const indexUrl =
     url.format({
         protocol: 'file:',
         pathname: path.join(__dirname, "index.html"),
@@ -27,11 +27,11 @@ function createWindow() {
     });
 
     // and load the index.html of the Angular app.
-    mainWindow.loadURL(IndexUrl);
+    mainWindow.loadURL(indexUrl);
 
     mainWindow.webContents.on("did-fail-load", () => {
         console.log("failed loading, fallback to index.html");
-        mainWindow.loadURL(IndexUrl);
+        mainWindow.loadURL(indexUrl);
     });
 
     if (process.env.NODE_ENV === "development") {

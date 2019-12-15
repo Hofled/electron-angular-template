@@ -1,0 +1,49 @@
+.molecule-container {
+    position: relative;
+
+    .image-medium {
+        z-index: 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 10em;
+        width: 10em;
+    }
+    
+    .particle-container {
+        animation: rotate-cw 10s linear infinite;
+        position: absolute;
+        height: 10em;
+        width: 10em;
+        top: 0;
+        left: 0;
+
+        .orbit-particle {
+            animation: rotate-ccw 5s linear infinite;
+            position: absolute;
+            left: 0px;
+            height: 3em;
+            width: 3em;
+        }
+    }
+}
+
+@keyframes rotate-ccw {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotate-cw {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -8,9 +8,13 @@ import { AppComponent } from "./app.component";
 // Material Module
 import { MaterialModule } from "./material.module";
 
+// App components
+import { ExampleComponent } from './example/example.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExampleComponent
   ],
   imports: [
     BrowserModule,
