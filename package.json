@@ -8,13 +8,17 @@
     "email": "ofri.herold@gmail.com",
     "url": "https://github.com/Hofled"
   },
-  "build": {
+  "build": {    
     "directories": {
-      "output": "electron-builder"
+      "output": "electron-builder",
+      "buildResources": "src/assets"
     },
-    "appId": "electron.angular.template",    
+    "appId": "electron.angular.template",
     "mac": {
       "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "icon": "app-icon.ico"
     }
   },
   "scripts": {
