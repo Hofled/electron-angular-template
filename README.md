@@ -24,6 +24,8 @@ In order to serve the development application, use the npm script `npm run e-sta
 
 ## Build executable
 
+The process of building and packaging an executable out of the application is using [electron-builder](https://www.electron.build/), which has a detailed [repository](https://github.com/electron-userland/electron-builder) as well.
+
 TODO - complete this section for how to build the application, and package a distributable executable Electron application.
 
 ## Running unit tests
