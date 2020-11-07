@@ -22,10 +22,11 @@
     }
   },
   "scripts": {
-    "build-electron": "tsc -p ./electron/tsconfig.electron.json",
+    "dev-build": "concurrently \"tsc -p ./electron/tsconfig.electron.json\" \"npm:dev-web-build\"",
     "dev-build:w": "concurrently \"tsc -w -p ./electron/tsconfig.electron.json\" \"npm:dev-web-build:w\"",
-    "e-start": "cross-env NODE_ENV=development electron ./dist/electron-main.js",
+    "dev-web-build": "ng build --progress=true --prod=false --deleteOutputPath=false",
     "dev-web-build:w": "ng build --watch=true --progress=true --prod=false --deleteOutputPath=false",
+    "e-start": "cross-env NODE_ENV=development electron ./dist/electron-main.js",
     "pkg-build": "electron-builder --dir",
     "dist": "electron-builder",
     "ng": "ng",
